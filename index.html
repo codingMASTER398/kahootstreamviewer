@@ -17,7 +17,7 @@
             video="https://www.youtube.com/embed/"+getParameterByName("video")
             var videoframe = document.createElement("iframe");
             videoframe.src=video
-            videoframe.width="49%"
+            videoframe.width="47%"
             videoframe.height=window.innerHeight/2
             videoframe.frameBorder=0
             videoframe.allow="autoplay"
@@ -28,13 +28,13 @@
             kahootframe.src="https://kahoot.it/"
             kahootframe.id="kahootframe"
             e.appendChild(kahootframe)
-            kahootframe.width="49%"
+            kahootframe.width="47%"
             kahootframe.height=window.innerHeight
 
             chatlink="https://www.youtube.com/live_chat?is_popout=1&v="+getParameterByName("video")+"&embed_domain="+window.location.hostname
             var videochat = document.createElement("iframe");
             videochat.src=chatlink
-            videochat.width="49%"
+            videochat.width="47%"
             videochat.height=window.innerHeight/2
             videochat.frameBorder=0
             e.appendChild(videochat)
