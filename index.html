@@ -25,6 +25,10 @@
             document.body.appendChild(kahootframe)
             kahootframe.width="860"
             kahootframe.height="510"
+            setTimeout(() => {
+                var theFrameDocument = kahootframe.contentDocument || kahootframe.contentWindow.document;
+                theFrameDocument.getElementsByClassName("sc-dlfnbm")[0].value=getParameterByName("pin")
+            }, 3000);
         </script>
     </body>
 </html>
