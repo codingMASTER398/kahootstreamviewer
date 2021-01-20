@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
     </head>
     <body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -12,25 +10,36 @@
                 results = regex.exec(location.search);
                 return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
             }
+
+            e=document.createElement("div")
+            document.body.appendChild(e)
+
             video="https://www.youtube.com/embed/"+getParameterByName("video")
             var videoframe = document.createElement("iframe");
             videoframe.src=video
-            videoframe.width="860"
-            videoframe.height="510"
+            videoframe.width="49%"
+            videoframe.height=window.innerHeight/2
             videoframe.frameBorder=0
             videoframe.allow="autoplay"
             videoframe.allowFullscreen=false
-            document.body.appendChild(videoframe)
+            e.appendChild(videoframe)
+
+
+            chatlink="https://www.youtube.com/live_chat?is_popout=1&v="+getParameterByName("video")+"&embed_domain="+window.location.hostname
+            var videochat = document.createElement("iframe");
+            videochat.src=chatlink
+            videochat.width="49%"
+            videochat.height=window.innerHeight/2
+            videochat.frameBorder=0
+            e.appendChild(videochat)
+
             var kahootframe= document.createElement("iframe")
             kahootframe.src="https://kahoot.it/"
             kahootframe.id="kahootframe"
-            document.body.appendChild(kahootframe)
-            kahootframe.width="860"
-            kahootframe.height="510"
-            setTimeout(() => {
-                $("iframe#kahootframe").contents().find('.sc-dlfnbm').value=1;
-                
-            }, 3000);
+            e.appendChild(kahootframe)
+            kahootframe.width="49%"
+            kahootframe.height=window.innerHeight
+            //https://www.youtube.com/live_chat?is_popout=1&v=
         </script>
     </body>
 </html>
