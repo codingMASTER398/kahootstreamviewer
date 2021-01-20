@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+            video="https://www.youtube.com/embed/"+getParameterByName("video")
+            var videoframe = document.createElement("iframe");
+            videoframe.src=video
+            videoframe.width="860"
+            videoframe.height="510"
+            videoframe.frameBorder=0
+            videoframe.allow="autoplay"
+            videoframe.allowFullscreen=false
+            document.body.appendChild(videoframe)
+            var kahootframe= document.createElement("iframe")
+            kahootframe.src="https://kahoot.it/"
+            document.body.appendChild(kahootframe)
+        </script>
+    </body>
+</html>
