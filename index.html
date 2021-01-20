@@ -24,6 +24,12 @@
             videoframe.allowFullscreen=false
             e.appendChild(videoframe)
 
+            var kahootframe= document.createElement("iframe")
+            kahootframe.src="https://kahoot.it/"
+            kahootframe.id="kahootframe"
+            e.appendChild(kahootframe)
+            kahootframe.width="49%"
+            kahootframe.height=window.innerHeight
 
             chatlink="https://www.youtube.com/live_chat?is_popout=1&v="+getParameterByName("video")+"&embed_domain="+window.location.hostname
             var videochat = document.createElement("iframe");
@@ -32,14 +38,6 @@
             videochat.height=window.innerHeight/2
             videochat.frameBorder=0
             e.appendChild(videochat)
-
-            var kahootframe= document.createElement("iframe")
-            kahootframe.src="https://kahoot.it/"
-            kahootframe.id="kahootframe"
-            e.appendChild(kahootframe)
-            kahootframe.width="49%"
-            kahootframe.height=window.innerHeight
-            //https://www.youtube.com/live_chat?is_popout=1&v=
         </script>
     </body>
 </html>
