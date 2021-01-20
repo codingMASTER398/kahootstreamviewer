@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
     <head>
         
     </head>
     <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -22,12 +23,13 @@
             document.body.appendChild(videoframe)
             var kahootframe= document.createElement("iframe")
             kahootframe.src="https://kahoot.it/"
+            kahootframe.id="kahootframe"
             document.body.appendChild(kahootframe)
             kahootframe.width="860"
             kahootframe.height="510"
             setTimeout(() => {
-                var theFrameDocument = kahootframe.contentDocument || kahootframe.contentWindow.document;
-                theFrameDocument.getElementsByClassName("sc-dlfnbm")[0].value=getParameterByName("pin")
+                var iFrameDOM = $("iframe#kahootframe").contents();
+                
             }, 3000);
         </script>
     </body>
