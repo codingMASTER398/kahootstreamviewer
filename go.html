@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>kahoot stream viewer</title>
+        <style>
+            body{
+                background-image: url('bg.png');
+            }
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+            button{
+                border-radius: 12px;
+                font-size: large;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                margin: auto;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="  margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);">
+            <script>
+                function go() {
+                    console.log(document.getElementById("link").value.replace("https://www.youtube.com/watch?v=",""))
+                    document.location.href="https://codingmaster398.github.io/kahootstreamviewer/?video="+document.getElementById("link").value.replace("https://www.youtube.com/watch?v=","")
+                }
+            </script>
+            <h1 style="font-family: Monospace; text-align:center;">Free tool for your kahoot stream viewers</h1>
+            <h2 style="font-family: Monospace; text-align:center;">Have an easier view of your stream, your stream chat and kahoot.it</h2>
+            <input type="text" id="link" name="link" placeholder="Enter youtube video URL (https)">
+            <button onclick="go()">Go</button>
+        </div>
+    </body>
+</html>
