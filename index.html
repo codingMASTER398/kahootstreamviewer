@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
         <style>
             body{
                 background-image: url('img/bg.png');
             }
+            #footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4.9%;
+                background-color: rgb(0, 140, 255);
+                color: white;
+                text-align: center;
+            }
+            #coolbutton{
+                background-color: #4CAF50; /* Green */
+                border: none;
+                border-radius: 8px;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 2px 1px;
+                cursor: pointer;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
         </style>
     </head>
     <body>
+
         <script>
+            function mainsite() {
+                document.location.href="https://codingmaster398.github.io/kahootstreamviewer/go.html"
+            }
             function getParameterByName(name) {
                 name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
                 var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
@@ -45,10 +72,14 @@
             var kahootframe= document.createElement("iframe")
             kahootframe.src="https://kahoot.it/"
             kahootframe.id="kahootframe"
-            kahootframe.frameBorder=0
+            kahootframe.frameBorder=1
             e.appendChild(kahootframe)
             kahootframe.width="100%"
-            kahootframe.height=window.innerHeight/2.1
+            kahootframe.height=window.innerHeight/2.3
         </script>
+        <div id="footer">
+            <h2 style=" font-size: large; display: inline-block; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Use this for your own stream, or for any other stream!</h2> 
+            <button onclick="mainsite()" id="coolbutton">Try it!</button>
+        </div>
     </body>
 </html>
